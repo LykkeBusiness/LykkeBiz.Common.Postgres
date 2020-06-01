@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenVASP.PostgreSql", "src\OpenVASP.PostgreSql\OpenVASP.PostgreSql.csproj", "{4710EDB7-8B59-4604-8235-2AD8D68BFCED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LykkeBiz.Common.Postgres", "src\LykkeBiz.Common.Postgres\LykkeBiz.Common.Postgres.csproj", "{4710EDB7-8B59-4604-8235-2AD8D68BFCED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

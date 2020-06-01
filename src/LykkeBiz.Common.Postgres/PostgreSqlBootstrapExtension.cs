@@ -4,7 +4,7 @@ using Autofac;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 
-namespace OpenVASP.PostgreSql
+namespace LykkeBiz.Common.Postgres
 {
     [PublicAPI]
     public static class PostgreSqlBootstrapExtension

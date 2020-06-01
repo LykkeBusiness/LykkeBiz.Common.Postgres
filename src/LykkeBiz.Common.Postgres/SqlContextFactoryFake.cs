@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace OpenVASP.PostgreSql
+namespace LykkeBiz.Common.Postgres
 {
     /// <summary>
     /// Fake sql context factory implementation for tests.

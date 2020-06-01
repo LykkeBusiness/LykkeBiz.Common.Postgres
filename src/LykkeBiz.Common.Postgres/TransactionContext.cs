@@ -1,6 +1,6 @@
 ﻿using System.Data.Common;
 
-namespace OpenVASP.PostgreSql
+namespace LykkeBiz.Common.Postgres
 {
     public class TransactionContext
     {

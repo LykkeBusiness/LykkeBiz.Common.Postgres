@@ -2,7 +2,7 @@
 using System.Data.Common;
 using System.Linq;
 using JetBrains.Annotations;
-using OpenVASP.PostgreSql.Attributes;
+using LykkeBiz.Common.Postgres.Attributes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Migrations;
@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
 
-namespace OpenVASP.PostgreSql
+namespace LykkeBiz.Common.Postgres
 {
     [PublicAPI]
     public abstract class PostgreSqlContext : DbContext

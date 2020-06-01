@@ -6,7 +6,7 @@ using JetBrains.Annotations;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
-namespace OpenVASP.PostgreSql
+namespace LykkeBiz.Common.Postgres
 {
     /// <summary>
     /// Factory for db context creation.

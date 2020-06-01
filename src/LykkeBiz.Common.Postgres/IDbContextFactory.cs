@@ -1,6 +1,6 @@
 ﻿using JetBrains.Annotations;
 
-namespace OpenVASP.PostgreSql
+namespace LykkeBiz.Common.Postgres
 {
     [PublicAPI]
     public interface IDbContextFactory<out T>

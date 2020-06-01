@@ -2,8 +2,8 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
-        <AssemblyName>OpenVASP.PostgreSql</AssemblyName>
-        <PackageId>OpenVASP.PostgreSql</PackageId>
+        <AssemblyName>LykkeBiz.Common.Postgres</AssemblyName>
+        <PackageId>LykkeBiz.Common.Postgres</PackageId>
         <Version>1.0.2</Version>
     </PropertyGroup>
 
