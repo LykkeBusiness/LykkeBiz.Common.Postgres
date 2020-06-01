@@ -1,0 +1,47 @@
+name: release
+
+on:
+  release:
+    types:
+      - published
+        
+jobs:
+  publish-release:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      # Set release version
+      - name: Get release version from tag
+        id: version
+        uses: LykkeBusiness/get-semver-from-tag-action@v1.0.2
+        with:
+          tag: ${{ github.ref }}
+      - name: Set version for release
+        uses: allenevans/set-env@v1.0.0
+        with:
+          VERSION: ${{ steps.version.outputs.non-prefixed }}
+
+      # Build solution      
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.201
+      - name: Install dependencies
+        run: dotnet restore
+      - name: Build solution
+        run: dotnet build --configuration Release --no-restore /p:Version=$VERSION
+      - name: Test
+        run: dotnet test --no-restore --verbosity normal
+      
+      # Pack NuGet packages
+      - name: Pack NuGet package
+        run: dotnet pack ./src/LykkeBiz.Common.Postgres/LykkeBiz.Common.Postgres.csproj --configuration Release --output ./packages --no-build --include-symbols --include-source /p:SymbolPackageFormat=snupkg /p:Version=$VERSION
+      
+      # Push NuGet packages
+      - name: Push NuGet packages
+        env:
+          API_KEY: ${{ secrets.NUGET_ORG_API_KEY }}
+        run: dotnet nuget push ./packages/**/*.nupkg --source https://api.nuget.org/v3/index.json --api-key $API_KEY
